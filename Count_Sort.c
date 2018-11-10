@@ -14,9 +14,9 @@ void CountSort(int *array, size_t size){
     if(min_index > array[i]) min_index = array[i];
   }
   int space_size = max_index - min_index + 1;
-  //tmp = (int*)calloc(0, sizeof(int) * space_size);
-  tmp = (int*)malloc(sizeof(int) * space_size);
-  memset(tmp, 0, sizeof(int) * space_size);
+  tmp = (int*)calloc(size, sizeof(int) * space_size);
+  //tmp = (int*)malloc(sizeof(int) * space_size);
+  //memset(tmp, 0, sizeof(int) * space_size);
   if(NULL == tmp) return;
   //statistics data
   for(size_t i = 0; i < size; ++i){
