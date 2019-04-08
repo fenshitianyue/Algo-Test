@@ -22,7 +22,7 @@ vector<int> twoSum(vector<int>& nums, const int target){
   vector<int>::iterator result_1 = find(nums.begin(), nums.end(), *first);
   int i = distance(nums.begin(), result_1);
   vector<int>::reverse_iterator result_2 = find(nums.rbegin(), nums.rend(), *second);
-  int j = -distance(nums.rend() - 1, result_2);
+  int j = distance(result_2, nums.rend() - 1);
   vector<int> result(i, j);
   return result;
 }
@@ -34,7 +34,7 @@ vector<int> twoSum(vector<int>& nums, const int target){
 // #include <algorithm>
 // using namespace std;
 // 
-// vector<int> func(vector<int>& nums, const int target){
+// vector<int> twoSum(vector<int>& nums, const int target){
 //   vector<int> result;
 //   for(vector<int>::size_type i = 0; i < nums.size(); ++i){
 //     int num2 = target - nums[i];
