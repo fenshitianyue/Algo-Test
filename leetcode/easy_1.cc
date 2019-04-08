@@ -27,6 +27,30 @@ vector<int> twoSum(vector<int>& nums, const int target){
   return result;
 }
 
+
+//method 2
+// #include <iostream>
+// #include <vector>
+// #include <algorithm>
+// using namespace std;
+// 
+// vector<int> func(vector<int>& nums, const int target){
+//   vector<int> result;
+//   for(vector<int>::size_type i = 0; i < nums.size(); ++i){
+//     int num2 = target - nums[i];
+//     int j = 0;
+//     vector<int>::iterator pos = find(nums.begin(), nums.end(), num2);
+//     if((pos != nums.end()) && (j = distance(nums.begin(), pos)) != static_cast<int>(i)){
+//       cout << i << " " << j << endl;
+//       result.push_back(i);
+//       result.push_back(j);
+//       return result;
+//     }
+//   } 
+//   return result;
+// }
+// 
+
 //test case
 int main(){
 
