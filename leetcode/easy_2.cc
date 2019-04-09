@@ -3,7 +3,23 @@
 #include <cmath>
 using namespace std;
 
-void reverse(int num){
+int reverse(int num){
+  int result = 0;
+  while(num != 0){
+    int n = num % 10;
+    num /= 10;
+    if(result > INT32_MAX / 10 || (result == INT32_MAX / 10 && n > 7)){
+      return 0;
+    }
+    if(result < INT32_MIN / 10 || (result == INT32_MIN / 10 && n < -8)){
+      return 0;
+    }
+    result = result * 10 + n;
+  }
+  return result;
+}
+
+void reverse_old(int num){
   int nums[32] = {0};
   for(int i = 0; num != 0; ++i){
     nums[i] = num % 10;
