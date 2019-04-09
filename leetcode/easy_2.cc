@@ -39,8 +39,10 @@ void reverse_old(int num){
 }
 
 //test case
+//get input from the command line
 int main(int argc, char* argv[]) {
   int num = atoi(argv[1]);
-  reverse(num);
+  int result = reverse(num);
+  cout << result << endl;
   return 0;
 }
