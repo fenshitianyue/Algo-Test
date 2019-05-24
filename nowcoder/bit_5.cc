@@ -10,11 +10,12 @@
 //一遍，因为有一个数过半，所以temp最后肯定存储的是过半的数
 
 //case 3:
-//
+//看代码应该直接就能看懂思路
 
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
 using namespace std;
 
 void case_1(vector<int>& v){
@@ -39,7 +40,23 @@ void case_2(vector<int>& v){
 }
 
 void case_3(vector<int>& v){
-
+  int tmp = 0;
+  unordered_map<int, int> m;
+  while(cin>>tmp){
+    auto key = m.find(tmp);
+    if(key != m.end()){
+      ++key->second;
+    }else{
+      m.insert({tmp, 1});
+    }
+  }
+  int size_2 = m.size() >> 1;
+  for(const auto& it: m){
+    if(it.second > size_2){
+      cout << it.first;
+      break;
+    }
+  }
 }
 
 
