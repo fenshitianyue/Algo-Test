@@ -10,27 +10,48 @@
 using namespace std;
 
 bool judge(const string& s){
-  size_t begin = 0;
-  size_t end = s.size() - 1;
-  while(begin != end){
-    if(s[begin] != s[end])
-      return false;
-    ++begin;
-    --end;
+  auto begin = s.begin();
+  auto end = s.end() - 1;
+  while(begin <= end){
+    if(*begin == *end){
+      ++begin;
+      --end;
+      continue;
+    }
+    break;
   }
-  return true;
+  return begin > end;
 }
 
 void print_method_num(string& s1, string& s2){
-  int count = 0;
-  string s;
-  for(size_t i = 0; i != s1.size(); ++i){
-    s = s1; 
-    s.insert(i, s2);
-    if(judge(s))
-      ++count;
+  if(0 == s1.size() && 0 == s2.size()){
+    cout << "0" << endl;
+    return;
   }
-  cout << count << endl;
+  else if(0 == s1.size()){
+    if(judge(s2)){
+      cout << "1" << endl;
+      return;
+    }
+    cout << "0" << endl;
+    return;
+  }
+  else if(0 == s2.size()){
+    if(judge(s1)){
+      cout << "1" << endl;
+      return;
+    }
+    cout << "0" << endl;
+    return;
+  }
+  int num = 0;
+  for(size_t i = 0; i <= s1.size(); ++i){
+    string tmp = s1;
+    tmp.insert(i, s2);
+    if(judge(tmp))
+      ++num;
+  }
+  cout << num << endl;
 }
 
 int main() {
