@@ -21,10 +21,12 @@ void permutation(char* str, char* pStart){
       swap(pStart, p);
     }
   }
-
 }
 
+//test case
 int main() {
-  
+  char str[] = "abc";  
+  permutation(str, str);
+  printf("\n");
   return 0;
 }
