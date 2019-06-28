@@ -1,9 +1,7 @@
 ///////////////////////////////////////////////////////
 // 创建两个线程，一个打印元音字母，一个打印辅音字母
 ///////////////////////////////////////////////////////
-
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
 
@@ -12,9 +10,9 @@
 char pool[27] = "abcdefghijklmnopqrstuvwxyz";
 int index = 0;
 int i, j;
+///////////////////////////////////////////////////////
 pthread_mutex_t mutex;
 pthread_cond_t cond;
-///////////////////////////////////////////////////////
 
 void* PrintVowels(void* vowels){
   char* array = (char*)vowels; 
