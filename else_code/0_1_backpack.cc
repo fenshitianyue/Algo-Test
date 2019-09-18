@@ -5,9 +5,9 @@ using namespace std;
 
 const int N = 1010;
 
-int n, m;
-int f[N][N];
-int v[N], w[N];
+int n, m; // n表示物品的个数，m表示背包的容量
+int f[N][N]; // 1010 * 1010 * 4 / 1024 / 1024 ~> 4M
+int v[N], w[N]; // v表示每个物品的体积，w表示每个物品的价值
 
 int main() {
   cin >> n >> m; 
